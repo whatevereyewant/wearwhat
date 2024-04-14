@@ -5,6 +5,7 @@ https://github.com/whatevereyewant/wearwhat/assets/145940008/e947cab3-700c-40f0-
 # 발표 자료
 https://github.com/whatevereyewant/wearwhat/files/14971218/default.pdf
 ![0001](https://github.com/whatevereyewant/wearwhat/assets/145940008/6f9bf677-83a5-4023-b7ff-29a88fea6848)
+![0002](https://github.com/whatevereyewant/wearwhat/assets/145940008/143c25b3-00f0-4124-ae5b-fb7c840697f0)
 ![0003](https://github.com/whatevereyewant/wearwhat/assets/145940008/3170934a-94ed-4636-b7e0-ac30c49d610b)
 ![0004](https://github.com/whatevereyewant/wearwhat/assets/145940008/4d6c4946-a5e2-4ca2-b619-04109afe5c01)
 ![0005](https://github.com/whatevereyewant/wearwhat/assets/145940008/618ee73c-c471-4e52-91f9-66ff21864688)
