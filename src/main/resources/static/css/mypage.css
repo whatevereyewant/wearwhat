@@ -1,0 +1,392 @@
+:root {
+	--color-primary: #5888aa;
+	--color-callout: #fad188;
+	--color-text: #466bb0;
+	--color-dark-bg: #030305;
+	--color-dark-border: #2a6787;
+	--color-light-bg: rgb(255 255 255 / 15%);
+	--color-light-border: rgb(255 255 255 / 60%);
+	--color-gold: #ffda71;
+	--color-silver: #ced0ca;
+	--color-bronze: #bba6a2;
+	--section-padding: clamp(85px, 15vw, 150px);
+	--container-padding: clamp(15px, 4vw, 30px);
+}
+
+.high-contrast {
+	--color-primary: #265d79;
+	--color-callout: #fff;
+	--color-dark-bg: #22526c;
+	--color-dark-border: #22526c;
+	--color-light-bg: #fff;
+	--color-light-border: #fff;
+}
+
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+.material-icons {
+  background: none;
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+  color: #ffffff;
+}
+
+body {
+  font-family: "Poor Story", system-ui;
+  margin: 0;
+  padding: 0;
+}
+
+.shopping-cart {
+	color: inherit;
+	text-decoration: none;
+}
+
+.section-title {
+  text-align: center;
+  max-width: 600px;
+  margin: 2rem auto 2rem;
+  
+  h1 {
+    text-transform: uppercase;
+    font-size: 3rem;
+    line-height: 4rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    margin: 0 0 .5rem;
+  }
+  
+  .separator {
+    width: 160px;
+    border-bottom: 2px solid #999;
+    margin: 0 auto 2rem;
+  }
+  
+  p {
+    color: #999;
+    margin: 0;
+  }
+}
+
+#header {
+  display: flex;
+  align-items: center;
+  justify-content: right;
+  position: fixed;
+  top: 0;
+  z-index: 10;
+  height: 50px; /* 헤더 높이 명시적 지정 */
+  width: 100%; /* 헤더 너비를 화면 너비와 동일하게 설정 */
+  font-size: 18px;
+  color: #fff;
+  background: var(--header-color, #99A3A4);
+  box-shadow: 0 0 2em rgb(0 0 0 / 30%);
+}
+
+
+.menu-link {
+  display: inline-block;
+  margin-right: 5px;
+}
+
+.logout-link {
+  text-decoration: none;
+  color: #fff;/* Set your desired text color */
+  font-size: 16px; /* Set your desired font size */
+}
+
+form > button {
+  border: none;
+  background: none;
+  padding: 0;
+  color: white;
+  padding: 10px 0px;
+  cursor: pointer;
+  font-family: "Poor Story", system-ui;
+  font-size: 20px;
+}
+
+.logo{
+    display: center;
+    position: center;
+}
+
+.list-inline {
+  margin:0;padding: 0;
+  list-style: none;
+  
+  li {
+    margin:0;padding: 0 0px;
+    display: inline-block;}
+    
+form {
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    display: inline-block;
+    background-color: #e7e7e7;
+    padding: 15rem 5rem;
+      
+    border-radius: 4px;
+      
+    transition: all 0.3s ease;
+      
+    h5 {
+        font-size: .75rem;
+        line-height: 1rem;
+        font-weight: 600;
+        margin:0;
+    }
+      
+      
+      &.active,
+      &:hover {
+        background-color: #111;
+        color: #fff;
+      }
+    }
+  }
+
+button{
+    color: #333; /* Set the text color as needed */
+    text-decoration: none; /* Remove underline */
+    background: none; /* Remove background color */
+    border: none; /* Remove border */
+    padding: 0; /* Remove padding */
+    font: inherit; /* Inherit font styles */
+    cursor: pointer; /* Change cursor to pointer on hover */
+
+    h5 {
+        font-size: .75rem;
+        line-height: 1rem;
+        font-weight: 600;
+        margin:0;
+    }
+    
+    &.active,
+      &:hover {
+        color: #fff;
+      }
+}
+
+a{
+    color: #111;
+    text-decoration: none;
+    text-transform: uppercase;
+    display: inline-block;
+    background-color: #e7e7e7;
+    padding: 15rem 5rem;
+      
+    border-radius: 4px;
+      
+    transition: all 0.3s ease;
+      
+    h5 {
+        font-size: .75rem;
+        line-height: 1rem;
+        font-weight: 600;
+        margin:0;
+    }
+      
+      
+      &.active,
+      &:hover {
+        background-color: #111;
+        color: #fff;
+      }
+    }
+
+.portfolio-filters {
+  text-align: center;
+  margin: 4rem 0 3rem;
+}
+
+.portfolio-item {
+  flex: 0 0 calc(20% - 20px); /* 각 이미지의 폭을 조절 (5개씩) */
+  margin: 0 3px 20px; /* 이미지 간의 간격을 설정할 수 있습니다. */
+  position: relative;
+}
+.portfolio-item {
+  float: left;
+  width: 19%;
+  position: center;
+  
+  .portfolio-image {
+    overflow: hidden;
+    display: center;
+    position: center;
+    
+    > img {
+      width: 100%; /* 이미지가 부모 요소의 100%를 차지하도록 설정 */
+      height: auto;
+      display: center;
+    }
+   }
+
+   button [type="submit"] {
+    background: none;
+    border: none;
+    padding: 0;
+    font-family: "Poor Story", system-ui; /* Replace 'YourFontFamily' with the actual font name */
+    text-decoration: underline; /* Add underline to mimic a link */
+    cursor: pointer;
+    color: #3498db; /* Set your desired text color */
+   }
+  
+  >a {
+    display: block;
+    
+    .project-overlay {
+      overflow: hidden;
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(10,10,10,.9);
+      color: #fff;
+      text-align: center;
+      opacity: 0;
+      
+      transition: all 0.3s ease;
+      
+      .project-info {
+        position: absolute;
+        top: 50%;
+        width: 100%;
+        margin-top: 0px;
+        opacity:0;
+        
+        i.fa {
+          margin-bottom: 1rem;
+          background-color: #fff;
+          font-size: 22px;
+          line-height: 48px;
+          width: 48px;
+          height: 48px;
+          color: #000;
+          
+          border-radius: 32px;
+        }
+        
+        transition: all 0.3s ease 0.3s;
+        
+        .project-name {
+          font-size: 1.5rem;
+          text-transform: uppercase;
+          margin: 0 0 .5rem;
+        }
+        p {
+          color: #999;
+          font-size: .85rem;
+          margin: 0 1rem 1rem;
+        }
+      }
+    }
+  }
+  >a:hover {
+    .project-overlay {
+      opacity: 1;
+      
+      transition: all 0.2s ease;
+      
+      .project-info {
+        margin-top: -60px;
+        opacity: 1;
+      }
+
+    }
+  }
+}
+
+content {
+	font-size: 20px;
+	position: relative;
+	padding: 50px 50px 50px 50px;
+	text-align: center;
+	line-height: 1.5em;
+	color: var(--color-text);
+	background: var(--color-dark-bg)
+		url(https://i.ibb.co/k2HMngn/Free-Vector-Winter-light-blue-gradient-vector-background.jpg);
+	background-size: cover;
+	background-attachment: fixed;
+	min-height: 100dvh;
+	text-shadow: 0 0 2em var(--color-dark-bg);
+}
+
+.page-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 10vh; /* 뷰포트의 전체 높이 */
+  padding: var(--container-padding);
+  background: #b8deed; /* 배경색을 하늘색으로 변경 */
+  border-radius: 5px;
+  width: 80%; /* 박스의 너비를 전체 너비의 80%로 설정 */
+  max-width: 600px; /* 박스의 최대 너비를 600px로 제한 */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.buttons {
+  text-align: left;
+margin: 5%;
+}
+
+.btn-hover {
+  width: 200px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  cursor: pointer;
+  margin: 20px;
+  height: 55px;
+  text-align:center;
+  border: none;
+  background-size: 300% 100%;
+
+  border-radius: 50px;
+  moz-transition: all .4s ease-in-out;
+  -o-transition: all .4s ease-in-out;
+  -webkit-transition: all .4s ease-in-out;
+  transition: all .4s ease-in-out;
+}
+/* 화면 너비가 768px 이하인 경우 */
+@media (max-width: 768px) {
+  .btn-hover {
+      width: 120px; /* 모바일 화면에서는 버튼의 너비를 줄입니다. */
+      height: 45px; /* 높이 조정 */
+      font-size: 13px; /* 폰트 크기를 조금 줄입니다. */
+      margin: 13px; /* 주변 마진 조정 */
+  }
+}tn-hover:hover {
+  background-position: 100% 0;
+  moz-transition: all .4s ease-in-out;
+  -o-transition: all .4s ease-in-out;
+  -webkit-transition: all .4s ease-in-out;
+  transition: all .4s ease-in-out;
+}
+
+.btn-hover:focus {
+  outline: none;
+}
+
+.btn-hover.color-8 {
+  background-image: linear-gradient(to right, #29323c, #485563, #2b5876, #4e4376);
+  box-shadow: 0 4px 15px 0 rgba(45, 54, 65, 0.75);
+}

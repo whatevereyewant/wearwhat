@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>오늘모입지?</title>
+    <link rel="stylesheet" href="../static/css/mypage.css">
+    <script src="../static/js/mypage.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&family=Poor+Story&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="page">
+        <nav id="header">
+            <div class="shopping-cart">
+                <form action="/userhome" method="get" class="menu-link">
+                    <button type="submit" class="material-icons" title="홈">home</button> <!-- 홈 아이콘 -->
+                </form>
+                <form action="/logout" method="get" class="menu-link">
+                    <button type="submit" class="material-icons" title="로그아웃">logout</button> <!-- 로그아웃 아이콘 -->
+                </form>
+            </div>
+        </nav>
+        <div id="headerDummy" style="height: 50px;"></div>
+        <main id="content">
+            <p>
+            <br>
+        <form action="/userhome" method="get" style="text-align:center;">
+            <label for="hm_submit">
+                <img src="https://i.ibb.co/vDJxmNk/image.png" height="100px">
+                <input id="hm_submit" type="submit" value="H&M" style="display: none;">
+            </label>
+        </form>
+        <div class="section-title">
+            <div class="separator"></div>
+            <h2 id="usernickname"> {{usernickname}}님의 마이 페이지</h2>
+        </div>
+    </main>
+    <div class="page-container">
+    <form action="/mypage/update" method="get">
+        <div>
+            <label for="username">아이디: </label>
+            <input type="text" id="username" name="username" value={{username}} readonly>
+        </div><br>
+        <div>
+            <label for="realname">이름: </label>
+            <input type="text" id="realname" name="realname" value={{realname}} readonly>
+        </div><br>
+        <div>
+            <label for="userheight">키: </label>
+            <input type="text" id="userheight" name="userheight" value={{userheight}} readonly>
+        </div>
+        <div>
+            <label for="userweight">몸무게: </label>
+            <input type="text" id="userweight" name="userweight" value={{userweight}} readonly>
+        </div>
+        <div>
+            <label for="usernickname">닉네임: </label>
+            <input type="text" id="usernickname" name="usernickname" value={{usernickname}} readonly>
+        </div>
+        <div>
+            <label for="userphonenum">전화번호: </label>
+            <input type="text" id="userphonenum" name="userphonenum" value={{userphonenum}} readonly>
+        </div>
+        <div class="buttons">
+        <button class="btn-hover color-8" type="button" onclick="location.href='/mypage/update'">클릭하여 수정하기</button>
+        </div>
+    </form>
+    </div>
+    </div>
+<script src="../static/js/mypage.js"></script>
+</body>
+</html>

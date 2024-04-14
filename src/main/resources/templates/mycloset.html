@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>오늘모입지?</title>
+    <link rel="stylesheet" href="../static/css/mycloset.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&family=Poor+Story&display=swap" rel="stylesheet">
+</head>
+<body>    
+    <div class="page">
+        <nav id="header">
+            <div class="shopping-cart">
+                <form action="/userhome" method="get" class="menu-link">
+                    <button type="submit" class="material-icons" title="홈">home</button> <!-- 홈 아이콘 -->
+                </form>
+                <form action="/mypage" method="get" class="menu-link">
+                    <button type="submit" class="material-icons" title="가입 정보 확인">account_circle</button> <!-- 마이 페이지 아이콘 -->
+                </form>
+                <form action="/logout" method="get" class="menu-link">
+                    <button type="submit" class="material-icons" title="로그아웃">logout</button> <!-- 로그아웃 아이콘 -->
+                </form>
+            </div>
+        </nav>
+        <div id="headerDummy" style="height: 50px;"></div>
+        <main id="content">
+            <div class="buttons">
+                <form style="display: inline-block" action="/myclosetupload" method="get" class="mycloset"><button class="btn-hover color-8">옷장 채우기</button></form>
+                <!--
+                <form style="display: inline-block" action="/codyrecommend" method="get" class="codyrecommend"><button class="btn-hover color-8">코디 추천받기</button></form> -->
+            </div>
+            <h1 id="usernickname">{{usernickname}}님의 옷장에는 {{totalItems}}개의 아이템이 있어요!</h1><br>
+
+            <div class="category-container">
+                <div class="category-pair">
+                    <div class="category">
+                        <h5>아우터</h5>
+                        <div class="gallery">
+                            {{#outers}}
+                            <div class="gallery-item">
+                                <a href="/myclosetdetail/{{id}}">
+                                    <img src="/images/{{id}}" alt="Closet Image" title="클릭하여 상세 정보 확인하기"/>
+                                </a>
+                            </div>
+                            {{/outers}}
+                        </div>
+                    </div>
+                    <div class="category">
+                        <h5>상의</h5>
+                        <div class="gallery">
+                            {{#tops}}
+                            <div class="gallery-item">
+                                <a href="/myclosetdetail/{{id}}">
+                                    <img src="/images/{{id}}" alt="Closet Image" title="클릭하여 상세 정보 확인하기"/>
+                                </a>
+                            </div>
+                            {{/tops}}
+                        </div>
+                    </div>
+                </div>
+                <div class="category-pair">
+                    <div class="category">
+                        <h5>하의</h5>
+                        <div class="gallery">
+                            {{#bottoms}}
+                            <div class="gallery-item">
+                                <a href="/myclosetdetail/{{id}}">
+                                    <img src="/images/{{id}}" alt="Closet Image" title="클릭하여 상세 정보 확인하기"/>
+                                </a>
+                            </div>
+                            {{/bottoms}}
+                        </div>
+                    </div>
+                    <div class="category">
+                        <h5>원피스</h5>
+                        <div class="gallery">
+                            {{#onepieces}}
+                            <div class="gallery-item">
+                                <a href="/myclosetdetail/{{id}}">
+                                    <img src="/images/{{id}}" alt="Closet Image" title="클릭하여 상세 정보 확인하기"/>
+                                </a>
+                            </div>
+                            {{/onepieces}}
+                            </div>
+                    </div>
+                </div>
+            </div>
+
+                </div>
+            </div>
+</body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>오늘모입지?</title>
+    <link rel="stylesheet" href="../static/css/myclosetupload.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&family=Poor+Story&display=swap" rel="stylesheet">
+    <style>
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>    
+    <div class="page">
+        <nav id="header">
+            <div class="shopping-cart">
+                <form action="/userhome" method="get" class="menu-link">
+                    <button type="submit" class="material-icons" title="홈">home</button> <!-- 홈 아이콘 -->
+                </form>
+                <form action="/mypage" method="get" class="menu-link">
+                    <button type="submit" class="material-icons" title="가입 정보 확인">account_circle</button> <!-- 마이 페이지 아이콘 -->
+                </form>
+                <form action="/logout" method="get" class="menu-link">
+                    <button type="submit" class="material-icons" title="로그아웃">logout</button> <!-- 로그아웃 아이콘 -->
+                </form>
+            </div>
+        </nav>
+        <div id="headerDummy" style="height: 50px;"></div>
+    <main id="content">
+        <form action="/myclosetupload/save" method="post" enctype="multipart/form-data">
+            <!-- ID 필드는 자동으로 생성되므로 숨겨둡니다 -->
+            <input type="hidden" id="id" name="id">
+            
+            <!-- 사용자 아이디는 자동으로 입력되므로 숨겨둡니다 -->
+            <input type="hidden" id="username" name="username" value="{{username}}">
+
+            <!--업로드 날짜는 자동으로 입력되므로 숨겨둡니다 -->
+            <input type="hidden" id="picdate" name="picdate"><br>
+
+            <label for="userpic">옷 이미지:</label><br>
+            <div class="upload-container">
+                <input type="file" id="userpic" name="userpic" accept="image/*"><br><br>
+                <img id="previewImage" src="#" alt="이미지 미리보기" style="display:none;">
+            </div><br>
+
+            <label for="piccategory">카테고리: </label><br>
+            <h4>이미지 파일을 선택하면 AI가 자동으로 분류합니다.<br>인식이 잘못될 경우에만 직접 선택해 주세요.</h4>
+            <select id="piccategory" name="piccategory"><br>
+                <option value="-">-------선택-------</option>
+                <option value="blazer">블레이저</option>
+                <option value="cardigan">가디건</option>
+                <option value="coat">코트</option>
+                <option value="fourSeasonsBlouseShirt">블라우스</option>
+                <option value="hoodie">후드</option>
+                <option value="jacket">자켓</option>
+                <option value="jeans">청바지</option>
+                <option value="longPants">긴 바지</option>
+                <option value="longSkirt">롱스커트</option>
+                <option value="longSleeve">긴팔 티셔츠</option>
+                <option value="midSeasonsBlouseShirt">간절기 블라우스</option>
+                <option value="onePieceSet">원피스</option>
+                <option value="parka">패딩</option>
+                <option value="shortPants">짧은 바지</option>
+                <option value="shortSkirt">미니 스커트</option>
+                <option value="shortSleeve">반팔 티셔츠</option>
+                <option value="sweater">니트</option>
+                <option value="trainingBottom">트레이닝 상의</option>
+                <option value="trainingTop">트레이닝 하의</option>
+                <option value="vest">베스트</option>
+                <option value="winterOuter">겨울 아우터</option>
+            </select><br><br>
+
+            <!---
+            <label for="piccategory">카테고리:</label><br>
+            <div id="predictionResult">AI 예측결과 입니다!</div><br>
+            <input type="text" id="piccategory" name="piccategory"><br> -->
+
+            <label for="picstyle">스타일:</label><br>
+            <select type="text" id="picstyle" name="picstyle">
+                <option value="-">-------선택------</option>
+                <option value="casual">캐주얼</option>
+                <option value="street">스트릿</option>
+                <option value="preppy">프레피</option>
+                <option value="amekaji">아메카지</option>
+                <option value="romantic">로맨틱</option>
+                <option value="girlish">걸리시</option>
+                <option value="business">비즈니스 캐주얼</option>
+                <option value="teen">하이틴</option>
+                <option value="minimal">미니멀</option>
+                <option value="sporty">스포티</option>
+            </select><br><br>
+
+            <label for="picseason">계절:</label><br>
+            <select type="text" id="picseason" name="picseason">
+                <option value="-">----선택----</option>
+                <option value="spring">봄</option>
+                <option value="summer">여름</option>
+                <option value="fall">가을</option>
+                <option value="winter">겨울</option>
+            </select><br><br>
+
+            <label for="piccomment">사용자 코멘트:</label><br>
+            <textarea id="piccomment" name="piccomment"></textarea>
+                <p class="small-text">나만의 메모를 입력하세요!</p><br>
+            
+            <button class="btn-hover color-8" type="submit">옷장에 집어넣기</button>
+        </form>     
+    </main>
+    </div>
+    <script src="../static/js/mycloset.js"></script>
+    </main>
+    </div>
+</body>
+</html>

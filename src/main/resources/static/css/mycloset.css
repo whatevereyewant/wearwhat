@@ -1,0 +1,310 @@
+:root {
+	--color-primary: #5888aa;
+	--color-callout: #fad188;
+	--color-text: #466bb0;
+	--color-dark-bg: #030305;
+	--color-dark-border: #2a6787;
+	--color-light-bg: rgb(255 255 255 / 15%);
+	--color-light-border: rgb(255 255 255 / 60%);
+	--color-gold: #ffda71;
+	--color-silver: #ced0ca;
+	--color-bronze: #bba6a2;
+	--section-padding: clamp(85px, 15vw, 150px);
+	--container-padding: clamp(15px, 4vw, 30px);
+}
+
+.high-contrast {
+	--color-primary: #265d79;
+	--color-callout: #fff;
+	--color-dark-bg: #22526c;
+	--color-dark-border: #22526c;
+	--color-light-bg: #fff;
+	--color-light-border: #fff;
+}
+
+*,
+*:before,
+*:after {
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+html,
+body,
+[id] {
+	scroll-margin-top: 50px;
+}
+
+html,
+body {
+	padding: 0;
+	margin: 0;
+}
+
+body {
+	min-height: 100vh;
+	font-family: "Poor Story", system-ui;
+	font-size: 16px;
+	line-height: 22px;
+	color: #666;
+	background-color: #fff;
+	-webkit-text-size-adjust: none;
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-size: 100%;
+}
+
+h5 {
+    background-color: white; /* 배경색을 흰색으로 설정 */
+    padding: 5px 10px; /* 상하 5px, 좌우 10px의 패딩을 추가 */
+    border-radius: 5px; /* 둥근 모서리 효과 */
+    display: inline-block; /* 필요한 만큼의 공간만 차지하도록 설정 */
+    margin: 10px 0; /* 상하 마진 추가로 조정 (예시) */
+}
+
+h1 {
+    font-size: 130%; /* 더 큰 사이즈로 조정 */
+}
+
+.shopping-cart a {
+	color: inherit;
+	text-decoration: none;
+	margin-right:50px;
+}
+
+body {
+	--mm-min-size: 190px;
+}
+
+#menu:not(.mm-menu):not(.mm) {
+	display: none;
+}
+
+#header {
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    position: fixed;
+    top: 0;
+    z-index: 10;
+    height: 50px; /* 헤더 높이 명시적 지정 */
+    width: 100%; /* 헤더 너비를 화면 너비와 동일하게 설정 */
+    font-size: 18px;
+    color: #fff;
+    background: var(--header-color, #99A3A4);
+    box-shadow: 0 0 2em rgb(0 0 0 / 30%);
+}
+
+
+#header a {
+	-webkit-box-align: center; 
+	-ms-flex-align: center;
+	align-items: center;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	position: relative;
+	top: 0;
+	left: 10px;
+	width: 50px;
+	height: 50px;
+	
+}
+.header a[href="#menu"] {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: right;
+	
+}
+.mm-wrapper--opened #header a[href="#menu"] {
+	display: none;
+}
+#header a[href="#page"] {
+	display: none;
+}
+.mm-wrapper--opened #header a[href="#page"] {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+}
+
+#content {
+	font-size: 20px;
+	position: relative;
+	padding: 10px 50px 50px 50px;
+	text-align: center;
+	line-height: 1.5em;
+	color: var(--color-text);
+	background: var(--color-dark-bg)
+		url(https://i.ibb.co/k2HMngn/Free-Vector-Winter-light-blue-gradient-vector-background.jpg);
+	background-size: cover;
+	background-attachment: fixed;
+	min-height: 100dvh;
+}
+
+.menu-link{
+    display: inline-block;
+    margin-right: 5px;
+}
+
+form > button {
+	border: none;   
+  	background: none;   
+  	padding: 0;
+	color: white;
+	padding: 10px 0px;
+	border: none;
+	cursor: pointer;
+	font-family: "Poor Story", system-ui; /* Change the font family as needed */
+	font-size: 20px; /* Change the font size as needed */
+}
+
+small {
+	color: var(--color-silver);
+}
+
+.responsive-image {
+	width: 50%;
+	height: auto;
+	max-width: 1000px; /* 이미지 최대 너비 지정 */
+  }
+  
+  @media (max-width: 768px) {
+	.responsive-image {
+	  max-width: 500px; /* 화면 너비가 768px 이하인 경우 이미지 최대 너비를 500px로 조정 */
+	}
+  }
+
+  * {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.buttons {
+    text-align: left;
+	margin: 5%;
+	display: flex;
+    justify-content: flex-end; /* 우측 정렬 */
+	margin-top: 1px;
+	margin-bottom: 0px;
+}
+
+.btn-hover {
+    width: 200px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+    cursor: pointer;
+    margin: 20px;
+    height: 55px;
+    text-align:center;
+    border: none;
+    background-size: 300% 100%;
+
+    border-radius: 50px;
+    moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+}
+/* 화면 너비가 768px 이하인 경우 */
+@media (max-width: 768px) {
+    .btn-hover {
+        width: 120px; /* 모바일 화면에서는 버튼의 너비를 줄입니다. */
+        height: 45px; /* 높이 조정 */
+        font-size: 13px; /* 폰트 크기를 조금 줄입니다. */
+        margin: 13px; /* 주변 마진 조정 */
+    }
+}
+.btn-hover:hover {
+    background-position: 100% 0;
+    moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+}
+
+.btn-hover:focus {
+    outline: none;
+}
+
+.btn-hover.color-8 {
+    background-image: linear-gradient(to right, #29323c, #485563, #2b5876, #4e4376);
+    box-shadow: 0 4px 15px 0 rgba(45, 54, 65, 0.75);
+}
+
+.upload-container {
+    margin: 20px;
+}
+
+.upload-container {
+	display: flex; /* Flexbox를 활용합니다. */
+	justify-content: center; /* 중앙 정렬합니다. */
+	align-items: center; /* 수직 중앙 정렬합니다. */
+	height: 100%; /* 컨테이너의 높이를 100%로 설정합니다. */
+}
+
+#previewImage {
+	max-width: 100%; /* 이미지의 최대 너비를 컨테이너의 100%로 제한합니다. */
+	height: auto; /* 이미지의 높이를 자동으로 조절합니다. */
+}
+
+.gallery-item img {
+    width: 70%; /* 이미지의 너비를 갤러리 아이템의 너비에 맞춤 */
+    max-width: 120px; /* 최대 너비 설정 */
+    height: auto; /* 이미지의 높이를 자동으로 조절하여 비율 유지 */
+}
+
+/* 상위 컨테이너에 대한 스타일 */
+.category-container {
+    max-width: 1000px; /* 최대 너비 설정, 프로젝트에 맞게 조정 가능 */
+    margin: 0 auto; /* 중앙 정렬 */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+/* 각 카테고리를 묶는 컨테이너 */
+.category-pair {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+	gap: 30px; /* 카테고리 사이 간격 조정 */
+    margin-bottom: 20px; /* 다음 카테고리 쌍과의 수직 간격 */
+}
+
+/* 각각의 카테고리(아우터, 상의, 하의, 원피스)에 대한 스타일 */
+.category {
+    flex: 1;
+    max-width: 50%; /* 각 카테고리의 최대 너비를 절반으로 설정 */
+    border: 2px solid #222229; /* 테두리 추가 */
+    margin: 10px; /* 주변 요소와의 간격 */
+    padding: 10px; /* 내부 여백 */
+    box-sizing: border-box; /* padding과 border가 너비에 포함되도록 */
+	background-image: url("https://i.ibb.co/7XFD2pJ/1.jpg"); /* 배경 이미지 설정 */
+    background-size: cover; /* 이미지가 컨테이너를 꽉 채우도록 설정 */
+    background-repeat: no-repeat; /* 이미지가 반복되지 않도록 설정 */
+	border-radius: 30px;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2열 그리드 설정 */
+    gap: 10px;
+    padding: 0 15px; /* 각각의 gallery에 padding 추가 */
+}
+
+.gallery-item {
+    /* 필요한 스타일 추가 */
+}
+
+.category > h5 {
+    margin-top: 0; /* 상단 여백 제거 */
+    text-align: center; /* 중앙 정렬 */
+}

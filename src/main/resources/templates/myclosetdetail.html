@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>오늘모입지?</title>
+    <link rel="stylesheet" href="../static/css/myclosetdetail.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&family=Poor+Story&display=swap" rel="stylesheet">
+</head>
+<body>    
+    <div class="page">
+        <nav id="header">
+            <div class="shopping-cart">
+                <form action="/userhome" method="get" class="menu-link">
+                    <button type="submit" class="material-icons" title="홈">home</button> <!-- 홈 아이콘 -->
+                </form>
+                <form action="/mypage" method="get" class="menu-link">
+                    <button type="submit" class="material-icons" title="가입 정보 확인">account_circle</button> <!-- 마이 페이지 아이콘 -->
+                </form>
+                <form action="/logout" method="get" class="menu-link">
+                    <button type="submit" class="material-icons" title="로그아웃">logout</button> <!-- 로그아웃 아이콘 -->
+                </form>
+            </div>
+        </nav>
+        <div id="headerDummy" style="height: 50px;"></div>
+        <main id="content">
+            <div class="detail-container">
+                <div class="image-container">
+                    <img src="/images/{{closet.id}}" alt="Closet Image"class="responsive-image"/>
+                </div>
+                <div class="info-container">
+                    <form action="/myclosetdetail/update/{{closet.id}}" method="post">
+                        <!-- ID 필드는 자동으로 생성되므로 숨겨둡니다 -->
+                        <input type="hidden" id="id" name="id">
+                        
+                        <!-- 사용자 아이디는 자동으로 입력되므로 숨겨둡니다 -->
+                        <input type="hidden" id="username" name="username" value="{{username}}">
+
+                        <!--업로드 날짜는 자동으로 입력되므로 숨겨둡니다 -->
+                        <input type="hidden" id="picdate" name="picdate"><br>
+
+                        <label for="piccategory">카테고리:</label>
+                        <select id="piccategory" name="piccategory">
+                            <option value="blazer" {{#isBlazerSelected}}selected{{/isBlazerSelected}}>블레이저</option>
+                            <option value="cardigan" {{#isCardiganSelected}}selected{{/isCardiganSelected}}>가디건</option>
+                            <option value="coat" {{#isCoatSelected}}selected{{/isCoatSelected}}>코트</option>
+                            <option value="fourSeasonsBlouseShirt" {{#isFourSeasonsBlouseShirtSelected}}selected{{/isFourSeasonsBlouseShirtSelected}}>블라우스</option>
+                            <option value="hoodie" {{#isHoodieSelected}}selected{{/isHoodieSelected}}>후드</option>
+                            <option value="jacket" {{#isJacketSelected}}selected{{/isJacketSelected}}>자켓</option>
+                            <option value="jeans" {{#isJeansSelected}}selected{{/isJeansSelected}}>청바지</option>
+                            <option value="longPants" {{#isLongPantsSelected}}selected{{/isLongPantsSelected}}>긴 바지</option>
+                            <option value="longSkirt" {{#isLongSkirtSelected}}selected{{/isLongSkirtSelected}}>롱스커트</option>
+                            <option value="longSleeve" {{#isLongSleeveSelected}}selected{{/isLongSleeveSelected}}>긴팔 티셔츠</option>
+                            <option value="midSeasonsBlouseShirt" {{#isMidSeasonsBlouseShirtSelected}}selected{{/isMidSeasonsBlouseShirtSelected}}>간절기 블라우스</option>
+                            <option value="onePieceSet" {{#isOnePieceSetSelected}}selected{{/isOnePieceSetSelected}}>원피스</option>
+                            <option value="parka" {{#isParkaSelected}}selected{{/isParkaSelected}}>패딩</option>
+                            <option value="shortPants" {{#isShortPantsSelected}}selected{{/isShortPantsSelected}}>짧은 바지</option>
+                            <option value="shortSkirt" {{#isShortSkirtSelected}}selected{{/isShortSkirtSelected}}>미니 스커트</option>
+                            <option value="shortSleeve" {{#isShortSleeveSelected}}selected{{/isShortSleeveSelected}}>반팔 티셔츠</option>
+                            <option value="sweater" {{#isSweaterSelected}}selected{{/isSweaterSelected}}>니트</option>
+                            <option value="trainingBottom" {{#isTrainingBottomSelected}}selected{{/isTrainingBottomSelected}}>트레이닝 상의</option>
+                            <option value="trainingTop" {{#isTrainingTopSelected}}selected{{/isTrainingTopSelected}}>트레이닝 하의</option>
+                            <option value="vest" {{#isVestSelected}}selected{{/isVestSelected}}>베스트</option>
+                            <option value="winterOuter" {{#isWinterOuterSelected}}selected{{/isWinterOuterSelected}}>겨울 아우터</option>
+                        </select><br>
+                        
+                        <label for="picstyle">스타일:</label>
+                        <select id="picstyle" name="picstyle">
+                            <option value="casual" {{#isCasualSelected}}selected{{/isCasualSelected}}>캐주얼</option>
+                            <option value="street" {{#isStreetSelected}}selected{{/isStreetSelected}}>스트릿</option>
+                            <option value="preppy" {{#isPreppySelected}}selected{{/isPreppySelected}}>프레피</option>
+                            <option value="amekaji" {{#isAmekajiSelected}}selected{{/isAmekajiSelected}}>아메카지</option>
+                            <option value="romantic" {{#isRomanticSelected}}selected{{/isRomanticSelected}}>로맨틱</option>
+                            <option value="girlish" {{#isGirlishSelected}}selected{{/isGirlishSelected}}>걸리시</option>
+                            <option value="business" {{#isBusinessSelected}}selected{{/isBusinessSelected}}>비즈니스 캐주얼</option>
+                            <option value="teen" {{#isTeenSelected}}selected{{/isTeenSelected}}>하이틴</option>
+                            <option value="minimal" {{#isMinimalSelected}}selected{{/isMinimalSelected}}>미니멀</option>
+                            <option value="sporty" {{#isSportySelected}}selected{{/isSportySelected}}>스포티</option>
+                        </select><br>
+                        
+                        <label for="picseason">계절:</label>
+                        <select id="picseason" name="picseason">
+                            <option value="spring" {{#isSpringSelected}}selected{{/isSpringSelected}}>봄</option>
+                            <option value="summer" {{#isSummerSelected}}selected{{/isSummerSelected}}>여름</option>
+                            <option value="fall" {{#isFallSelected}}selected{{/isFallSelected}}>가을</option>
+                            <option value="winter" {{#isWinterSelected}}selected{{/isWinterSelected}}>겨울</option>
+                        </select><br>
+                        
+                        
+                        <label for="piccomment">코멘트:</label>
+                        <input type="text" id="piccomment" name="piccomment" value="{{closet.piccomment}}">
+                    </div>
+                    <div class="button-container">
+                    <div class="buttons">
+                        <form action="/myclosetdetail/update/{{closet.id}}" method="post">
+                            <button id="updateButton" class="btn-hover color-8" type="submit">수정한 정보 저장하기</button>
+                        </form>
+                    </div>
+                    <div class="buttons">
+                        <form action="/myclosetdetail/delete/{{closet.id}}" method="post">
+                            <button id="deleteButton" class="btn-hover color-8" type="submit">아이템 삭제</button>
+                        </form>
+                    </div>
+                    <div class="buttons">
+                        <form action="/mycloset">
+                            <button class="btn-hover color-8" type="submit">내 옷장 돌아가기</button>
+                        </form>
+                    </div>
+                    </div>
+                </div>
+        </main>
+    </div>
+</body>
+</html>

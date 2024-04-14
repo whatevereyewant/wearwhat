@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>오늘모입지?</title>
+    <link rel="stylesheet" href="../static/css/userhome.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&family=Poor+Story&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="page">
+        <nav id="header">
+            <div class="shopping-cart">
+                <form action="/mypage" method="get" class="menu-link">
+                    <button type="submit" value="mypage" class="material-icons" title="가입 정보 확인">account_circle</button>
+                </form>
+                <form action="/logout" method="get" class="menu-link">
+                    <button type="submit" value="logout" class="material-icons" title="로그아웃">logout</button>
+                </form>
+            </div>
+        </nav>
+        <div id="headerDummy" style="height: 50px;"></div>
+        <main id="content">
+            <div id="ww_8ad28917ded4f" v='1.3' loc='auto' a='{"t":"ticker","lang":"ko","sl_lpl":1,"ids":["wl4479"],"font":"Arial","sl_ics":"one_a","sl_sot":"celsius","cl_bkg":"#FFFFFF","cl_font":"#000000","cl_cloud":"#d4d4d4","cl_persp":"#2196F3","cl_sun":"#FFC107","cl_moon":"#FFC107","cl_thund":"#FF5722"}'><a href="https://weatherwidget.org/" id="ww_8ad28917ded4f_u" target="_blank">Weather widget for website</a></div><script async src="https://app2.weatherwidget.org/js/?id=ww_8ad28917ded4f"></script>
+            <p>
+                <form action="/userhome" method="get">
+                    <label for="hm_submit" style="cursor: pointer;">
+                        <img src="https://i.ibb.co/vDJxmNk/image.png" alt="image" class="responsive-image">
+                        <input id="hm_submit" type="submit" value="H&M" style="display: none;">
+                    </label>
+                </form>
+                <h4>안녕하세요, {{usernickname}}님</h4>
+                <div class="buttons">
+                    <form action="/mycloset" method="get" class="mycloset">
+                        <button class="btn-hover color-1">내 옷장 확인하기</button></form>
+                    <!--
+                    <form action="/codyrecommend" method="get" class="codyrecommend">
+                        <button class="btn-hover color-3">코디 추천받기</button></form> -->
+                </div>
+            </p>
+        </main>
+    </div>
+    <script src="../static/js/homepage.js"></script>
+</body>
+</html>
+
+
+
+
+

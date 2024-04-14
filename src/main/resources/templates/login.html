@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>오늘모입지?</title>
+    <link rel="stylesheet" href="../static/css/login.css">
+    <script src="../static/js/login.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&family=Poor+Story&display=swap" rel="stylesheet">
+  </head>
+<body>
+  <main id="cotn_principal">
+    <div class="cotn_principal">
+        <div class="cont_centrar">
+        
+          <div class="cont_login">
+        <div class="cont_info_log_sign_up">
+              <div class="col_md_login">
+        <div class="cont_ba_opcitiy">
+                
+                <h2>로그인</h2>  
+          <p>회원이신가요?</p>
+          <button class="btn_login" onclick="change_to_login()">로그인 하기</button>
+          </div>
+          </div>
+        <div class="col_md_sign_up">
+        <div class="cont_ba_opcitiy">
+          <h2>회원가입</h2>
+        
+          
+          <p>아직 회원이 아니신가요?</p>
+        
+          <button class="btn_sign_up" onclick="change_to_sign_up()">가입하기</button>
+        </div>
+          </div>
+              </div>
+        
+            
+            <div class="cont_back_info">
+              <div class="cont_img_back_black">
+              <img src="https://i.ibb.co/XDnn0tL/wooden-t-shirt-hangers-in-fashion-apparel-store-2-picjumbo-com.jpg" alt="" />
+              </div>
+            </div>
+        <div class="cont_forms" >
+            
+            <div class="cont_img_back_">
+              <img src="https://i.ibb.co/XDnn0tL/wooden-t-shirt-hangers-in-fashion-apparel-store-2-picjumbo-com.jpg" alt="" />
+            </div>
+        
+        <div class="cont_form_login">
+        <a href="#" onclick="hidden_login_and_sign_up()"></a>
+          <form action="/login" method="post">
+            <h2>로그인</h2>
+            <input type="text" name="username" placeholder="아이디" />
+            <input type="password" name="password" placeholder="비밀번호" />
+            <button id="btn_login" class="btn_login" type="submit">로그인 하기</button>
+        </form>
+    
+        </div>
+          
+        <div class="cont_form_sign_up">
+        <a href="#" onclick="hidden_login_and_sign_up()" action="/membership" method="post"></a>
+        <form action="/membership" method="post">
+            <h2>회원가입</h2>
+          <input type="text" name="realname" placeholder="이름" />
+          <input type="text" name="username" placeholder="아이디" />
+          <input type="password" name="password" placeholder="비밀번호" />
+          <input type="text" name="usernickname" placeholder="닉네임" />
+          <input type="number" name="userheight" placeholder="키" />
+          <input type="number" name="userweight" placeholder="몸무게" />
+          <input type="text" name="userphonenum" placeholder="휴대전화(010-1234-5678 형태)" />
+          <button id="btn_sign_up" class="btn_sign_up"  type="submit">가입하기</button>
+        </form>
+        </div>
+        
+            </div>
+            
+          </div>
+        </div>
+    </div>
+    </main>
+</body>
+</html>
