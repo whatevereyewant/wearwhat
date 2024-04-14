@@ -15,8 +15,8 @@ spring:
     # 데이터 베이스 
     datasource:
         url: jdbc:mysql://0:3306/teamdata?userSSL=false&allowPublicKeyRetrieval=true&serverTimezone=Asia/Seoul
-        username: teamdb
-        password: 1234
+        username: team
+        password: 1
         driver-class-name: com.mysql.cj.jdbc.Driver
 
     #  데이터 베이스 커넥션 
